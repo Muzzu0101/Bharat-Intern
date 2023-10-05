@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Search for weather</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    
+    <body>
+        <div id="app">
+            <div class="container">
+                
+                <div class="row g-3 mt-5">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <h2> Please Enter the City </h2>
+                        <div class="row">
+                            <div class="col-8">
+                                <input
+                                    type="text"
+                                    id="city"
+                                    placeholder="Enter City"
+                                />
+                            </div>
+                            <div class="hello">
+                                <button
+                                    v-on:click="getWeather()"
+                                    type="submit"
+                                    
+                                >
+                                     Weather
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+
+                <!-- Result start here -->
+                <div class="row result hidden mt-5">
+                    <div class="col-sm-1 col-md-1 col-lg-3"></div>
+                    <div class="col-sm-10 col-md-10 col-lg-6">
+                        <div class="card">
+                            <div
+                                class="card-header text-center bg-gradient text-dark"
+                            >
+                                Current weather in
+                                <span class="fw-bold"
+                                    >{{name}}, {{country}}</span
+                                >
+                            </div>
+                            <div class="card-body">
+                                Local Time: {{localtime_epoch}}
+                                <span class="text-secondary">({{tz_id}})</span>
+                                <div class="row d-flex flex-row mt-3">
+                                    <div class="d-flex flex-row">
+                                        <div class="me-4">
+                                            <img
+                                                :src="icon"
+                                                style="width: 96px"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div
+                                            class="fw-bold me-4"
+                                            style="font-size: 3em"
+                                        >
+                                            {{temp_c}}&deg;C
+                                        </div>
+                                        <div class="p-2">
+                                            {{condition}}<br />Feels Like
+                                            {{feelslike_c}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex flex-row">
+                                    <div
+                                        class="d-flex justify-content-between flex-row"
+                                    >
+                                        <div
+                                            class="text-center secondary-info rounded fw-bold"
+                                        >
+                                            Wind:<br />{{wind_kph}} km/h
+                                        </div>
+                                        <div
+                                            class="text-center secondary-info rounded fw-bold"
+                                        >
+                                            Humidity:<br />{{humidity}} %
+                                        </div>
+                                        <div
+                                            class="text-center secondary-info rounded fw-bold"
+                                        >
+                                            Cloud:<br />{{cloud}} %
+                                        </div>
+                                        <div
+                                            class="text-center secondary-info rounded fw-bold"
+                                        >
+                                            UV Index:<br />{{uv}} %
+                                        </div>
+                                        <div
+                                            class="text-center secondary-info rounded fw-bold"
+                                        >
+                                            Pressure:<br />{{pressure_mb}} mb
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-1 col-lg-3"></div>
+                </div>
+
+                
+                <!-- Result end here -->
+                <div class="row mt-5 error hidden">
+                    <div class="text-center text-danger">
+                        The city or region you entered is invalid. Please check
+                        if there is a typo. 🤔
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-bottom text-center mb-2">
+               A fun project developed by
+                <a
+                    href="www.linkedin.com/in/mohammed-muzammil-n"
+                    target="black"
+                    class="text-success developer"
+                    >Mohammed Muzammil N</a
+                >
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
+
+body,
+* {
+    font-family: 'Aleo', serif;
+}
+
+body {
+    height: 100vh;
+    background: url(https://source.unsplash.com/1600x900/?landscape);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.col-6 h2{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.secondary-info {
+    /* background-color: aquamarine; */
+    background-color: rgb(232, 218, 198);
+    opacity: 1.0;
+    margin: 4px;
+    padding: 1em;
+    margin-bottom: 1.6px;
+}
+.developer{
+    text-decoration: none;
+}
+
+.hidden{
+    display: none;
+}
+.hello button {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    border: none;
+    opacity: 0.5;
+    transition:  ease-in 0.4s;
+    justify-content: center;
+    flex-direction: row;
+}
+.hello button:hover{
+    background-color: black;
+    color: white;
+    opacity: 1;
+    transform: scale(1.0);
+}
+.col-8 input{
+        left: 50%;
+        background-color: white;
+        border-radius: 20px;
+        padding: 5px 15px;
+        border: none;
+        /* opacity: 0.5; */
+        transition:  ease-in 0.4s;
+}
+.col-8 input:hover{
+    background-color: black;
+    color: white;
+    opacity: 1;
+    transform: scale(1.0);
+}
+.Footer-line{
+    font-size: large;
+    position: relative;
+    bottom: 5px;
+}
+
+const app = Vue.createApp({
+    data() {
+        return {
+            name: 'Kuala Lumpur',
+            country: 'Malaysia',
+            localtime_epoch: '1694612543',
+            tz_id: 'Asia/Kuala_Lumpur',
+            temp_c: 32,
+            icon: 'https://cdn.weatherapi.com/weather/128x128/night/116.png',
+            condition: 'Partly Cloudy',
+            feelslike_c: 40.5,
+            wind_kph: 22,
+            humidity: 83,
+            cloud: 54,
+            uv: 1,
+            pressure_mb: 999,
+        };
+    },
+    methods: {
+        async getWeather() {
+            const city = document.querySelector('#city').value;
+            // this.city = city;
+            // console.log(city);
+            const res = await fetch(
+                'https://api.weatherapi.com/v1/current.json?key=030d6eb01e874c5b93e103358231309&q=' +
+                    city +
+                    '&aqi=no'
+            );
+            const resultDisplay = document.querySelector('.result');
+            const errorDisplay = document.querySelector('.error');
+            if (res.status != 200) {
+                resultDisplay.classList.add('hidden');
+                errorDisplay.classList.remove('hidden');
+                return;
+            }
+            errorDisplay.classList.add('hidden');
+            const { location, current } = await res.json();
+
+            resultDisplay.classList.remove('hidden');
+            this.name = location.name;
+            this.country = location.country;
+            this.localtime_epoch = this.formatDateTime(location.localtime);
+            this.tz_id = location.tz_id;
+            this.icon = 'https:' + current.condition.icon;
+            this.temp_c = current.temp_c;
+            this.condition = current.condition.text;
+            this.feelslike_c = current.feelslike_c;
+            this.wind_kph = current.wind_kph;
+            this.humidity = current.humidity;
+            this.cloud = current.cloud;
+            this.uv = current.uv;
+            this.pressure_mb = current.pressure_mb;
+            // console.log(this.icon);
+            // this.localtime_epoch = location.localtime;
+            // console.log(res);
+            // console.log(location);
+            // console.log(current);
+        },
+        formatDateTime(date) {
+            // console.log('function is working');
+            // return 'Function is working!';
+            const time = new Date(date);
+            const hours = time.getHours();
+            const minutes = time.getMinutes();
+            const amOrPm = hours >= 12 ? 'PM' : 'AM';
+            const hours12 = hours % 12 || 12;
+            const formattedTime = `${hours12}:${minutes
+                .toString()
+                .padStart(2, '0')} ${amOrPm}`;
+            return formattedTime;
+        },
+    },
+});
+app.mount('#app');
