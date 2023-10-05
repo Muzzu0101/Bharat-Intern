@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOHAMMED MUZAMMIL N </title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header sticky">
+      <a href="#" class="logo">MOHAMMED MUZAMMIL N</a>
+      <nav class="navbar">
+        <a href="#" class="active" style="--i: 1">Home</a>
+        <a href="#about-me-id" style="--i: 2">About</a>
+        <a href="#skills-id" style="--i: 3">Skills</a>
+        <a href="#contact-id" style="--i: 5">Contact</a>
+      </nav>
+    </header>
+    <div class="my-container">
+      <div class="info-side">
+        <h3 class="heading-1">Hello, Myself</h3>
+        <h1>MOHAMMED MUZAMMIL N</h1>
+        
+        <p>
+          I'm currently a Btech Undergrad from Computer Science Background
+          <br />
+          Looking Up for Internship and Placement Opportunities as a
+          Front-end-developer or as a Software Engineer
+        </p>
+
+        <a href="mailto:muzammiln.cse.rymec@gmail.com" target="_blank"><i class="fa-regular fa-envelope" style="--i: 7" ></i></a>
+        <a href="https://www.linkedin.com/in/chetan-deep-39376720b/" target="_blank"><i class="fa-brands fa-linkedin-in" style="--i: 8"></i></a>
+        
+        <br />
+        <a href="Mohammed's Resume-1.pdf" title=""<i download></i>
+        <button class="btn">Download CV</button>
+      </a>
+      </div>
+      <div class="my-img">
+        <img src="LinkedIn profile-pic.jpg" alt="My Image" srcset="" />
+      </div>
+    </div>
+
+    <!-- -----aBOUT mE sECTION---- -->
+    <div class="aboutme-container" id="about-me-id" data-aos="fade-right">
+      <h2>ABOUT ME</h2>
+      <div class="about-me">
+        <div class="about-img-container">
+          <img src="p2.png" alt="" />
+        </div>
+        <p>
+          Hello, I'm MOHAMMED MUZAMMIL N, a passionate and skilled Front-End Developer
+          and Programmer with a strong dedication to crafting user-centric and
+          innovative digital experiences. With a blend of creativity and
+          technical expertise, I thrive on turning ideas into functional and
+          visually appealing websites and applications. <br> 
+          I am also focussing on my Data Structures and Algorithms and Learning React JS.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skilks -->
+
+    <div class="skills-container" id="skills-id" data-aos="fade-left">
+      <h2>SKILLS</h2>
+      <div class="skills">
+        <div class="progress-section" >
+          <div class="task-progress">
+            <p>HTML & CSS
+              <span>90%</span>
+            </p>
+            <progress class="progress progress1" max="100" value="90" style="width: 32rem;"></progress>
+          </div>
+          <div class="task-progress">
+            <p>Javascript
+              <span>70%</span>
+            </p>
+            <progress class="progress progress2" max="100" value="75" style="width: 32rem;"></progress>
+          </div>
+          <div class="task-progress">
+            <p>React JS 
+              <span>50%</span>
+            </p>
+            <progress class="progress progress3" max="100" value="50" style="width: 32rem;"></progress>
+          </div>
+          <div class="task-progress">
+            <p>Java 
+              <span>50%</span>
+            </p>
+            <progress class="progress progress4" max="100" value="50" style="width: 32rem;"></progress>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------Contact Me----- -->
+
+    <div class="contact-container" id="contact-id" data-aos="fade-right">
+      <h2>CONTACT ME</h2>
+      <div class="contact">
+        <form class="contact-form" action="#">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your Name"
+          /><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your Email"
+          /><br />
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            placeholder="Enter your Message"
+          ></textarea
+          ><br />
+          <input type="submit" value="Submit" id="submit-btn" />
+          <br>
+          <span class="cpy"> Copyright © 2023</span>
+        </form>
+      </div>
+    </div>
+
+    <!-- ------Thanking Page---- -->
+
+    <div class="thanking-page">
+      <h4>"Thank you for visting my portfolio- I hope you find it inspiring!"</h4>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b70ad1f48f.js"
+      crossorigin="anonymous"
+    ></script>
+    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset:350,
+      duration:800
+    });
+  </script>
+  </body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Poppins:wght@100;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: "Poppins",sans-serif;
+    /* color: white; */
+    /* background-color: rgb(4, 4, 36); */
+    color: black;
+    background-color: white;
+}
+.header{
+    /* background-color: rgb(4, 4, 36);
+     */
+     background-color: white;
+
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 10%;
+    box-shadow: 0px 0px 14px rgb(233, 193, 193);
+    z-index: 1;
+    
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.logo{
+    color:black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 27px;
+    cursor: default;
+    animation:slideLeft 1s ease-in-out;
+}
+.navbar a{
+    text-decoration: none;   
+    color: black;
+    display: inline-block;
+    padding: 0px 16px;
+    font-weight: 600;
+    transition: 0.3s all; 
+    animation:navMenu 1s forwards;
+    animation-delay: calc(0.1s *var(--i)); 
+    opacity: 100;
+}
+.navbar a:hover ,
+.navbar .active{
+    color: blueviolet;
+    border-bottom: 2px solid;
+    border-radius: 15%;
+}
+.my-container{
+    margin-top: 3.5rem;
+    /* background-color: rgb(4, 4, 36); */
+    background-color: white;
+
+    display: flex;
+    padding: 25px 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-side h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    transition: 0.3s all;
+    animation: headingUp 1s forwards ;
+}
+.info-side h1{
+    font-size: 4.2rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.info-side h1:hover{
+    font-style: italic;
+    color: rgb(183, 118, 244);
+
+}
+.info-side h3 span{
+    color: black;
+}
+p{
+    line-height: 27px;
+    margin: 20px 0px 40px 0px;
+    transition: 0.3s all;
+    animation:paraRight 1s forwards;
+}
+
+.my-img img{
+    width: 20rem;
+    border-radius: 50%;
+}
+i{
+    position: relative;
+    border: 2px solid blueviolet;
+    padding: 10px;
+    border-radius: 50%;
+    color: blueviolet;
+    margin: 0rem 0.5rem;
+    transition: 0.3ms;
+    animation: navMenu 1s forwards ;
+    animation-delay: calc(var(--i)* 10ms);
+}
+i:hover{
+    box-shadow: 0px 0px 20px blueviolet;
+}
+button{
+    /* background-color: #0ef; */
+    margin-top: 50px;
+    padding: 20px 70px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0px 0px 1.0rem rgb(169, 98, 235);
+    animation: btnAnimation 1s forwards;
+}
+button:hover{
+    box-shadow: none;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes navMenu {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    } 
+     100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes headingUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    } 
+     100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes paraRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    } 
+     100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes btnAnimation {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
+}
+@keyframes aboutUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    } 
+     100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.aboutme-container, .skills-container, .contact-container{
+    /* background-color: rgb(4, 4, 36); */
+    background-color: white;
+
+    padding-top: 4rem;
+
+}
+.aboutme-container > h2,.skills-container > h2, .contact-container> h2{
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    color: rgb(183, 118, 244);
+}
+.about-me, .skills, contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.about-me > p, .skills > p{
+    width: 50vw;
+}
+.about-me p
+.about-img-container, .skills-img-container{
+    height: 26%;
+    width: 47%;
+    display: flex;
+    justify-content: center;
+}
+.about-img-container > img {
+width: 50%;
+border-radius: 1rem;
+}
+.progress-section {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    /* background: rgb(4, 4, 36); */
+    background-color: white;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+
+    .task-progress {
+      margin: 1.5rem 0;
+    }
+  
+    .task-progress p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: black;
+      width: 100%;
+    }
+  
+    span {
+      color: black;
+    }
+  
+    .progress {
+        border-radius: 10px;
+        height: 10px;
+        width: 32rem;
+    }
+  }
+
+.contact{
+    display: flex;
+    justify-content: center;
+}
+.contact-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.contact-form > input{
+    padding: 0.8rem;
+    width: 30rem;
+    border-radius: 1rem;
+    /* background: #a959f39a; */
+    margin-bottom: 0.2rem;
+    color: black;
+    font-family: "Poppins",sans-serif;
+}
+.contact-container{
+    margin-bottom: 2rem;
+}
+.contact-form > textarea{
+    padding: 0.8rem;
+    border-radius: 1rem;
+    background-color: white;
+    width: 30rem;
+    height: 10rem;
+    color: black;
+    font-family: "Poppins",sans-serif;
+}
+#submit-btn{
+    background-color: white;
+    color: blueviolet;
+    margin-top: 1rem;
+    width: 5rem;
+    margin: auto;
+    box-shadow: 0px 0px 5px #0ef;
+}
+#submit-btn:hover{
+    cursor: pointer;
+    color: white;
+    background-color: blueviolet;
+    transition: 0.3s all ease-in-out;
+}
+::placeholder{
+    color: black;
+}
+.contact-form > input:focus, .contact-form > textarea:focus{
+    color: blueviolet;
+    background-color: white;
+    
+}
+.cpy{
+    color: beige;
+    text-align: right;
+}
+
+.thanking-page{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding-bottom:40px ;
+}
+.logo:hover {
+    font-style: italic;
+}
+
